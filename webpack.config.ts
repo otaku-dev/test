@@ -48,7 +48,7 @@ const config: webpack.Configuration = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "style.css",
+      filename: "styles.css",
     }),
   ],
 };
