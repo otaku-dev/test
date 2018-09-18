@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/otaku-dev/website#readme",
   "devDependencies": {
+    "@types/mini-css-extract-plugin": "^0.2.0",
     "@types/node": "^10.10.1",
     "@types/webpack": "^4.4.11",
     "autoprefixer": "^9.1.5",
