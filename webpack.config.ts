@@ -1,5 +1,6 @@
 import path from "path";
 import webpack from "webpack";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 const config: webpack.Configuration = {
   mode: "production",
@@ -29,21 +30,15 @@ const config: webpack.Configuration = {
           path.resolve(__dirname, "node_modules"),
         ],
         use: [
-          {
-            loader: "style-loader",
-          },
+          MiniCssExtractPlugin.loader,
           {
             loader: "css-loader",
             options: {
               importLoaders: 2,
             }
           },
-          {
-            loader: "postcss-loader"
-          },
-          {
-            loader: "sass-loader",
-          }
+          "postcss-loader",
+          "sass-loader",
         ],
       }
     ],
@@ -51,6 +46,11 @@ const config: webpack.Configuration = {
   resolve: {
     extensions: [".js", ".ts", ".scss"],
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "style.css",
+    }),
+  ],
 };
 
 export default config;
