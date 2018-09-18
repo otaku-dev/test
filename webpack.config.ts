@@ -21,7 +21,7 @@ const config: webpack.Configuration = {
         loader: "ts-loader",
       },
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         include: [
           path.resolve(__dirname, "src"),
         ],
@@ -35,18 +35,21 @@ const config: webpack.Configuration = {
           {
             loader: "css-loader",
             options: {
-              importLoaders: 1,
+              importLoaders: 2,
             }
           },
           {
             loader: "postcss-loader"
+          },
+          {
+            loader: "sass-loader",
           }
         ],
       }
     ],
   },
   resolve: {
-    extensions: [".ts"],
+    extensions: [".js", ".ts", ".scss"],
   },
 };
 
