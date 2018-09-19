@@ -1,5 +1,6 @@
 import path from "path";
 import webpack from "webpack";
+import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 const config: webpack.Configuration = {
@@ -40,6 +41,10 @@ const config: webpack.Configuration = {
           "postcss-loader",
           "sass-loader",
         ],
+      },
+      {
+        test: /\.pug$/,
+        loader: "pug-loader",
       }
     ],
   },
@@ -47,6 +52,13 @@ const config: webpack.Configuration = {
     extensions: [".js", ".ts", ".scss"],
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      filename: "index.html",
+      template: "src/index.pug",
+      minify: {
+        collapseWhitespace: true,
+      },
+    }),
     new MiniCssExtractPlugin({
       filename: "css/website.min.css",
     }),
