@@ -1,0 +1,11 @@
+/* TEAM */
+	Chef: Ryoji Yoshioka
+	Twitter: @ojiry
+	From: Tokyo, Japan
+
+/* THANKS */
+
+/* SITE */
+	Last update: 2018/09/19
+	Language: Japanese
+	Doctype: HTML5
