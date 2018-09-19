@@ -7,7 +7,7 @@ const config: webpack.Configuration = {
   entry: path.join(__dirname, "src", "index"),
   output: {
     path: path.resolve(__dirname, "docs"),
-    filename: "bundle.js"
+    filename: "js/website.min.js"
   },
   module: {
     rules: [
@@ -48,7 +48,7 @@ const config: webpack.Configuration = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "styles.css",
+      filename: "css/website.min.css",
     }),
   ],
 };
